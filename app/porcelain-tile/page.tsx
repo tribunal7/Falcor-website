@@ -1,0 +1,4 @@
+import type {Metadata} from 'next';
+import ProductCollection from '@/components/ProductCollection';
+export const metadata:Metadata={title:'Porcelain Tile Collection — $1.95/Sq. Ft.',description:'Explore premium large-format porcelain tile at $1.95 per sq. ft. Polished and matte porcelain for commercial and residential projects with nationwide delivery.',alternates:{canonical:'/porcelain-tile/'}};
+export default function Collection(){return <><section className="page-hero compact"><div className="shell"><p className="eyebrow">Falcor porcelain collection</p><h1>Premium Material.<br/>Direct-Import Pricing.</h1><p>Every current Falcor porcelain product is priced at <strong>$1.95 per square foot</strong>, with nationwide delivery available.</p></div></section><section className="section"><div className="shell"><ProductCollection/></div></section></>}
