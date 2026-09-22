@@ -14,7 +14,7 @@ export default function QuoteForm({product}:{product?:string}){
     <p className="hidden-field"><label>Don’t fill this out: <input name="bot-field"/></label></p>
     <div className="form-grid">
       <label>Name<input required name="name" type="text" autoComplete="name"/></label>
-      <label>Company<input required name="company" type="text" autoComplete="organization"/></label>
+      <label>Company<input name="company" type="text" autoComplete="organization"/></label>
       <label>Email<input required name="email" type="email" autoComplete="email"/></label>
       <label>Phone<input required name="phone" type="tel" autoComplete="tel"/></label>
       <label>Project Type<select required name="project-type" defaultValue="Commercial"><option>Commercial</option><option>Residential</option><option>Hospitality</option><option>Multifamily</option><option>Other</option></select></label>
