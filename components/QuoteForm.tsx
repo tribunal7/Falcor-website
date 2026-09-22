@@ -30,14 +30,14 @@ export default function QuoteForm({product}:{product?:string}){
         body:body.toString(),
       });
       if(!response.ok) throw new Error('Submission failed');
-      window.location.assign('/thank-you/');
+      window.location.replace('/thank-you/');
     }catch{
       setSubmitError('We could not send your request. Please try again.');
       setSubmitting(false);
     }
   }
 
-  return <form className="quote-form" name="falcor-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/" onSubmit={handleSubmit}>
+  return <form className="quote-form" name="falcor-quote" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
     <input type="hidden" name="form-name" value="falcor-quote"/>
     <p className="hidden-field"><label>Don’t fill this out: <input name="bot-field"/></label></p>
 
