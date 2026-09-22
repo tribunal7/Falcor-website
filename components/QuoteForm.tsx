@@ -1,16 +1,43 @@
 'use client';
-import {useEffect,useState} from 'react';
+import {FormEvent,useEffect,useState} from 'react';
 import {products} from '@/lib/data';
 
 export default function QuoteForm({product}:{product?:string}){
   const [selectedProduct,setSelectedProduct]=useState(product||'');
+  const [submitting,setSubmitting]=useState(false);
+  const [submitError,setSubmitError]=useState('');
+
   useEffect(()=>{
     if(product) return;
     const fromUrl=new URLSearchParams(window.location.search).get('product');
     if(fromUrl) setSelectedProduct(fromUrl);
   },[product]);
 
-  return <form className="quote-form" name="falcor-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/">
+  async function handleSubmit(event:FormEvent<HTMLFormElement>){
+    event.preventDefault();
+    setSubmitError('');
+    setSubmitting(true);
+
+    const form=event.currentTarget;
+    const formData=new FormData(form);
+    const body=new URLSearchParams();
+    formData.forEach((value,key)=>body.append(key,String(value)));
+
+    try{
+      const response=await fetch('/',{
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:body.toString(),
+      });
+      if(!response.ok) throw new Error('Submission failed');
+      window.location.assign('/thank-you/');
+    }catch{
+      setSubmitError('We could not send your request. Please try again.');
+      setSubmitting(false);
+    }
+  }
+
+  return <form className="quote-form" name="falcor-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/" onSubmit={handleSubmit}>
     <input type="hidden" name="form-name" value="falcor-quote"/>
     <p className="hidden-field"><label>Don’t fill this out: <input name="bot-field"/></label></p>
 
@@ -98,7 +125,8 @@ export default function QuoteForm({product}:{product?:string}){
       <textarea name="message" rows={5} placeholder="Tell us what you’re sourcing and where it needs to go."/>
     </label>
 
-    <button className="button button-dark" type="submit">Send Project Request</button>
+    {submitError&&<p className="form-error" role="alert">{submitError}</p>}
+    <button className="button button-dark" type="submit" disabled={submitting}>{submitting?'Sending…':'Send Project Request'}</button>
     <p className="form-note">Nationwide delivery available. Free delivery on orders over 3,000 sq. ft.</p>
   </form>
 }
