@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {cases,products} from '@/lib/data';
+import {caseCardImages} from '@/lib/case-card-images';
 
 export const dynamicParams = false;
 export function generateStaticParams(){return cases.filter(c=>c.status==='complete').map(c=>({slug:c.slug}))}
@@ -18,10 +19,11 @@ export default async function Study({params}:{params:Promise<{slug:string}>}){
   if(!c)return notFound();
   const p=products.find(x=>x.slug===c.productSlug);
   if(!p)return notFound();
+  const localCaseImage=caseCardImages[c.slug];
   return <><section className="study-hero"><div className="shell">
     <div className="breadcrumbs"><Link href="/">Home</Link><span>/</span><Link href="/case-studies/">Case Studies</Link><span>/</span><span>{c.title}</span></div>
     <div className="study-heading"><div><p className="eyebrow">{p.name} • {c.sector}</p><h1>{c.title}</h1><p className="hero-lead">{c.challenge}</p></div><Link className="button button-light" href={`/porcelain-tile/${p.slug}/`}>View {p.name}</Link></div>
-    {c.images.length?<div className="case-image-grid">{c.images.map((img,i)=><figure className="study-image" key={img.src}><img src={img.src} alt={img.alt}/>{i===0?null:null}</figure>)}</div>:null}
+    {localCaseImage?<div className="case-image-grid"><figure className="study-image"><img src={localCaseImage} alt={c.images[0]?.alt||`${c.product} case study`}/></figure></div>:null}
   </div></section>
   <section className="section"><div className="shell study-copy-grid"><div><p className="eyebrow">Case study</p><h2>The design challenge</h2><p>{c.challenge}</p></div><div>
     <h3>A room-specific material strategy</h3><p>{c.materialStrategy}</p>
