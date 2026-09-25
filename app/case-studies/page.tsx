@@ -1,5 +1,14 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {cases} from '@/lib/data';
+import {caseCardImages} from '@/lib/case-card-images';
+
 export const metadata:Metadata={title:'Porcelain Tile Design Applications & Case Studies',description:'Explore Falcor porcelain tile case studies with room-specific material strategies, layouts and product specifications.'};
-export default function Cases(){const published=cases.filter(c=>c.status==='complete');return <><section className="page-hero compact"><div className="shell"><p className="eyebrow">Case studies</p><h1>Porcelain tile in architectural context.</h1><p>Explore 60 room-specific Falcor case studies built around product formats, finishes, material coordination and project planning.</p></div></section><section className="section"><div className="shell"><div className="case-index-grid">{published.map(c=><Link href={`/case-studies/${c.slug}/`} className="study-card" key={c.slug}>{c.hero?<img src={c.hero} alt={c.images[0]?.alt||`${c.product} case study`}/>:<div className="study-placeholder">{c.product}</div>}<div><p className="eyebrow">{c.product} • {c.sector}</p><h2>{c.title}</h2><p>{c.challenge}</p><span>View study →</span></div></Link>)}</div></div></section></>}
+
+export default function Cases(){
+  const published=cases.filter(c=>c.status==='complete');
+  return <><section className="page-hero compact"><div className="shell"><p className="eyebrow">Case studies</p><h1>Porcelain tile in architectural context.</h1><p>Explore 60 room-specific Falcor case studies built around product formats, finishes, material coordination and project planning.</p></div></section><section className="section"><div className="shell"><div className="case-index-grid">{published.map(c=>{
+    const cardImage=caseCardImages[c.slug];
+    return <Link href={`/case-studies/${c.slug}/`} className="study-card" key={c.slug}>{cardImage?<img src={cardImage} alt={c.images[0]?.alt||`${c.product} case study`} loading="lazy"/>:<div className="study-placeholder"><strong>{c.product}</strong><span>Case study image unavailable</span></div>}<div><p className="eyebrow">{c.product} • {c.sector}</p><h2>{c.title}</h2><p>{c.challenge}</p><span>View study →</span></div></Link>
+  })}</div></div></section></>
+}
