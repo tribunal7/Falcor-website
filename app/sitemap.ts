@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 
 export default function sitemap():MetadataRoute.Sitemap {
   const fixed = ['', '/porcelain-tile', '/case-studies', '/architects-builders', '/education', '/delivery', '/about', '/contact', '/request-quote'];
-  const publishedCases = cases.filter(c => c.status === 'complete');
+  const publishedCases = cases;
 
   return [
     ...fixed.map(u => ({url: siteUrl + u + '/', changeFrequency: 'weekly' as const, priority: u === '' ? 1 : 0.7})),

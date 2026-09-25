@@ -17,3 +17,4 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:520px){
   .mobile-menu nav{width:calc(100vw - 28px);right:0}
 }
+.study-copy-block{margin:2rem 0 2.5rem}.study-copy-block p{line-height:1.75;white-space:pre-line}.study-copy-block h2,.study-copy-block h3{margin-bottom:.75rem}
