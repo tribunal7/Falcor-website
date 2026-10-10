@@ -88,6 +88,7 @@ export default function QuoteForm({product}:{product?:string}){
         <select required name="product" value={selectedProduct} onChange={e=>setSelectedProduct(e.target.value)}>
           <option value="">Select a product</option>
           {products.map(p=><option key={p.slug} value={p.name}>{p.name}</option>)}
+          {['32x32','24x48'].map(size=><option key={size} value={`Calacatta Vena ${size}`}>Calacatta Vena {size}</option>)}
         </select>
       </label>
 
