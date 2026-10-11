@@ -8,7 +8,7 @@ export default function QuoteForm({product}:{product?:string}){
   const [submitError,setSubmitError]=useState('');
 
   useEffect(()=>{
-    if(product) return;
+    if(product){setSelectedProduct(product);return;}
     const fromUrl=new URLSearchParams(window.location.search).get('product');
     if(fromUrl) setSelectedProduct(fromUrl);
   },[product]);
