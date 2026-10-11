@@ -59,7 +59,7 @@ export default function Header(){
   }, []);
 
   return <>
-    <div className="topbar"><div className="shell topbar-inner"><span>Premium Porcelain • $1.95/Sq. Ft.</span><span>Nationwide Delivery • Free on Orders Over 3,000 Sq. Ft.</span></div></div>
+    <div className="topbar"><div className="shell topbar-inner"><span>Premium Porcelain • $1.95/Sq. Ft.</span><a className="topbar-call" href="tel:+17542239107">Call Us: (754) 223-9107</a></div></div>
     <header className="site-header">
       <div className="shell nav-wrap">
         <Link href="/" className="logo-link" aria-label="Falcor Surfaces home"><img src="/brand/falcor-logo.png" alt="Falcor Surfaces" className="logo"/></Link>
@@ -69,11 +69,11 @@ export default function Header(){
           <summary aria-label="Toggle menu">Menu</summary>
           <nav aria-label="Mobile navigation" onClick={(event) => {
             if (event.target instanceof Element && event.target.closest('a')) closeMenu();
-          }}>{links.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<Link className="mobile-menu-cta" href="/request-quote/">Request a Quote</Link></nav>
+          }}>{links.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<a href="tel:+17542239107">Call Us: (754) 223-9107</a><Link className="mobile-menu-cta" href="/request-quote/">Request a Quote</Link></nav>
         </details>
       </div>
     </header>
-    <div className="mobile-actions" aria-label="Quick contact actions"><Link href="/contact/">Contact to Order</Link><Link href="/request-quote/">Request Quote</Link></div>
+    <div className="mobile-actions" aria-label="Quick contact actions"><a href="tel:+17542239107">Call to Check Stock</a><Link href="/request-quote/">Request Quote</Link></div>
   </>
 }
 

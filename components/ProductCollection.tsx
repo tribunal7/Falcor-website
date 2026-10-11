@@ -8,7 +8,7 @@ export default function ProductCollection(){
   const [finish,setFinish]=useState('All');
   const sizes=['All','24x24','24x48','32x32','40x40'];
   const finishes=['All','Polished','Matte'];
-  const filtered=useMemo(()=>products.filter(p=>(size==='All'||p.size===size)&&(finish==='All'||p.finish===finish)),[size,finish]);
+  const filtered=useMemo(()=>products.filter(p=>(size==='All'||p.size===size||(p.slug==='calacatta-vena'&&size==='24x48'))&&(finish==='All'||p.finish===finish)),[size,finish]);
   return <>
     <div className="filter-panel">
       <div><span className="filter-label">Size</span><div className="filter-buttons">{sizes.map(v=><button key={v} className={size===v?'active':''} onClick={()=>setSize(v)} type="button">{v}</button>)}</div></div>

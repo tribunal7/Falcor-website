@@ -13,7 +13,7 @@ export const metadata:Metadata={
 };
 
 const organizationSchema={
-  '@context':'https://schema.org','@type':'Organization',name:'Falcor Surfaces',url:siteUrl,
+  '@context':'https://schema.org','@type':'Organization',name:'Falcor Surfaces',url:siteUrl,telephone:'+1-754-223-9107',
   address:{'@type':'PostalAddress',streetAddress:'1489 West Palmetto Park Road',addressLocality:'Boca Raton',addressRegion:'FL',postalCode:'33427',addressCountry:'US'}
 };
 
