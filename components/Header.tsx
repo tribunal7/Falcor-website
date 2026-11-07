@@ -12,7 +12,7 @@ const links = [
 
 export default function Header(){
   return <>
-    <div className="topbar"><div className="shell topbar-inner"><span>Premium Porcelain • $1.95/Sq. Ft.</span><span>Nationwide Delivery • Free on Orders Over 3,000 Sq. Ft.</span></div></div>
+    <div className="topbar"><div className="shell topbar-inner"><span>Premium Porcelain • $1.95/Sq. Ft.</span><span>Nationwide Delivery • Free on Orders Over 2,600 Sq. Ft.</span></div></div>
     <header className="site-header">
       <div className="shell nav-wrap">
         <Link href="/" className="logo-link" aria-label="Falcor Surfaces home"><img src="/brand/falcor-logo.png" alt="Falcor Surfaces" className="logo"/></Link>
