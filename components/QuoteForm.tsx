@@ -128,6 +128,6 @@ export default function QuoteForm({product}:{product?:string}){
 
     {submitError&&<p className="form-error" role="alert">{submitError}</p>}
     <button className="button button-dark" type="submit" disabled={submitting}>{submitting?'Sending…':'Send Project Request'}</button>
-    <p className="form-note">Nationwide delivery available. Free delivery on orders over 3,000 sq. ft.</p>
+    <p className="form-note">Nationwide delivery available. Free delivery on orders of 2,600 sq. ft. or more</p>
   </form>
 }

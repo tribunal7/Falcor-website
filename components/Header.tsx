@@ -59,7 +59,7 @@ export default function Header(){
   }, []);
 
   return <>
-    <div className="topbar"><div className="shell topbar-inner"><span>Premium Porcelain • $1.95/Sq. Ft.</span><a className="topbar-call" href="tel:+17542239107">Call Us: (754) 223-9107</a></div></div>
+    <div className="topbar"><div className="shell topbar-inner"><span>Free Shipping on Orders of 2,600 Sq. Ft. or More</span><a className="topbar-call" href="tel:+17542239107">Call Us: (754) 223-9107</a></div></div>
     <header className="site-header">
       <div className="shell nav-wrap">
         <Link href="/" className="logo-link" aria-label="Falcor Surfaces home"><img src="/brand/falcor-logo.png" alt="Falcor Surfaces" className="logo"/></Link>
