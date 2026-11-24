@@ -21,7 +21,7 @@ export default function Page() {
   return <div className={styles.page}>
     <section className={styles.hero}>
       <div><h1>Porcelain tile planning guides</h1><p>Compare sizes, see finishes in real light, and plan your order.</p></div>
-      <img src="/education/florida-living-room-slate.webp" alt="Sunlight crossing a white marble-look porcelain floor in a Florida-style living room" width="652" height="352" />
+      <img src="/education/charcoal-living-room.webp" alt="Sunlight crossing a white marble-look porcelain floor in a Florida-style living room" width="1672" height="941" fetchPriority="high" />
     </section>
     <div className={styles.body}>
       <h2 className={styles.rule}>Explore the guides</h2>
@@ -31,8 +31,8 @@ export default function Page() {
         </a>
       )}</div>
       <section className={styles.compare}>
-        {[['furnished-square-layout-slate','24×24'],['furnished-rectangle-layout-slate','24×48']].map(([image,size]) =>
-          <figure key={image}><img src={'/education/'+image+'.webp'} alt={'Overhead view of the furnished living and dining room with a '+size+' tile layout'} width="720" height="720" loading="lazy" /><figcaption>{size}</figcaption></figure>
+        {[['charcoal-square-layout','24×24'],['charcoal-rectangle-layout','24×48']].map(([image,size]) =>
+          <figure key={image}><img src={'/education/'+image+'.webp'} alt={'Overhead view of the furnished living and dining room with a '+size+' tile layout'} width="887" height="887" loading="lazy" /><figcaption>{size}</figcaption></figure>
         )}
         <div><h2><a href={'/education/'+guides[0].slug+'/'}>See how size changes a room</a></h2><p>Follow the grout lines from the doorway.</p></div>
       </section>
