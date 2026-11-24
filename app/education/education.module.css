@@ -34,3 +34,4 @@
   .compare div { grid-column: span 2; }
   .cta h2 { width: 100%; text-align: center; }
 }
+.compare figure img { aspect-ratio: 4 / 3; }
