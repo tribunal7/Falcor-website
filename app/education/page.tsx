@@ -21,7 +21,7 @@ export default function Page() {
   return <div className={styles.page}>
     <section className={styles.hero}>
       <div><h1>Porcelain tile planning guides</h1><p>Compare sizes, see finishes in real light, and plan your order.</p></div>
-      <img src="/education/living-room-original.webp" alt="Sunlight crossing a cream porcelain floor in a Florida-style living room" width="652" height="352" />
+      <img src="/education/florida-living-room.webp" alt="Sunlight crossing a cream porcelain floor in a Florida-style living room" width="652" height="352" />
     </section>
     <div className={styles.body}>
       <h2 className={styles.rule}>Explore the guides</h2>
@@ -31,15 +31,15 @@ export default function Page() {
         </a>
       )}</div>
       <section className={styles.compare}>
-        {[['square-layout-original','24×24'],['rectangle-layout-original','24×48']].map(([image,size]) =>
-          <figure key={image}><img src={'/education/'+image+'.webp'} alt={'12-by-16-foot room plan with six rows and '+(size === '24×24' ? 'eight' : 'four')+' columns of tile'} width="297" height="246" loading="lazy" /><figcaption>{size}</figcaption></figure>
+        {[['furnished-square-layout','24×24'],['furnished-rectangle-layout','24×48']].map(([image,size]) =>
+          <figure key={image}><img src={'/education/'+image+'.webp'} alt={'Overhead view of the furnished living and dining room with a '+size+' tile layout'} width="720" height="720" loading="lazy" /><figcaption>{size}</figcaption></figure>
         )}
-        <div><h2>See how size changes a room</h2><p>Follow the grout lines from the doorway. In a 12-by-16-foot room, laying a 48-inch tile along the long wall cuts the number of interior joints in that direction from seven to three in a nominal straight grid.</p><a href={'/education/'+guides[0].slug+'/'}>Explore the layout example →</a></div>
+        <div><h2><a href={'/education/'+guides[0].slug+'/'}>See how size changes a room</a></h2><p>Follow the grout lines from the doorway.</p></div>
       </section>
       <h2 className={styles.rule}>Tile details, up close</h2>
       <div className={styles.details}>
-        <article><img src="/education/rectified-edge-original.webp" alt="Close-up of a straight porcelain tile edge" width="464" height="212" loading="lazy"/><h3>What rectified edges mean</h3><p>Rectified tile has mechanically finished edges for more consistent sizing. Ask your installer to confirm the grout-joint width for your tile and layout.</p></article>
-        <article><img src="/education/lobby-floor-original.webp" alt="Porcelain floor in a commercial lobby" width="482" height="212" loading="lazy"/><h3>Understanding PEI ratings</h3><p>PEI ratings describe surface abrasion resistance for glazed tile. Check the rating for the exact finish against the foot traffic you expect.</p></article>
+        <article><img src="/education/rectified-edge-original.webp" alt="Close-up of a straight porcelain tile edge" width="464" height="212" loading="lazy"/><details><summary><h3>What rectified edges mean</h3></summary><p>Rectified tile has mechanically finished edges for more consistent sizing. Ask your installer to confirm the grout-joint width for your tile and layout.</p></details></article>
+        <article><img src="/education/lobby-floor-original.webp" alt="Porcelain floor in a commercial lobby" width="482" height="212" loading="lazy"/><details><summary><h3>Understanding PEI ratings</h3></summary><p>PEI ratings describe surface abrasion resistance for glazed tile. Check the rating for the exact finish against the foot traffic you expect.</p></details></article>
       </div>
     </div>
     <section className={styles.cta}><h2>Planning a project?</h2><a href="tel:+17542239107">Check stock</a><a href="/request-quote/">Request a Quote</a></section>
