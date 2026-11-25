@@ -1,6 +1,7 @@
 'use client';
 import {FormEvent,useEffect,useState} from 'react';
 import {products} from '@/lib/data';
+import {trackEvent} from '@/lib/analytics';
 
 export default function QuoteForm({product}:{product?:string}){
   const [selectedProduct,setSelectedProduct]=useState(product||'');
@@ -30,6 +31,7 @@ export default function QuoteForm({product}:{product?:string}){
         body:body.toString(),
       });
       if(!response.ok) throw new Error('Submission failed');
+      trackEvent('generate_lead');
       window.location.replace('/thank-you/');
     }catch{
       setSubmitError('We could not send your request. Please try again.');
