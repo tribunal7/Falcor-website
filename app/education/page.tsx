@@ -38,8 +38,16 @@ export default function Page() {
       </section>
       <h2 className={styles.rule}>Tile details, up close</h2>
       <div className={styles.details}>
-        <article><img src="/education/rectified-edge-slate.webp" alt="Close-up of a straight porcelain tile edge" width="464" height="212" loading="lazy"/><details><summary><h3>What rectified edges mean</h3></summary><p>Rectified tile has mechanically finished edges for more consistent sizing. Ask your installer to confirm the grout-joint width for your tile and layout.</p></details></article>
-        <article><img src="/education/lobby-floor-slate.webp" alt="Porcelain floor in a commercial lobby" width="482" height="212" loading="lazy"/><details><summary><h3>Understanding PEI ratings</h3></summary><p>PEI ratings describe surface abrasion resistance for glazed tile. Check the rating for the exact finish against the foot traffic you expect.</p></details></article>
+        <article><img src="/education/rectified-edge-slate.webp" alt="Close-up of a straight porcelain tile edge" width="464" height="212" loading="lazy"/><details><summary><h3>What rectified edges mean</h3></summary><p>Rectified tile has mechanically finished edges for more consistent sizing. Ask your installer to confirm the grout-joint width for your tile and layout.</p><a className="education-backlink" href="/education/what-is-rectified-porcelain-tile/">Read the full guide →</a></details></article>
+        <article><img src="/education/lobby-floor-slate.webp" alt="Porcelain floor in a commercial lobby" width="482" height="212" loading="lazy"/><details><summary><h3>Understanding PEI ratings</h3></summary><p>PEI ratings describe surface abrasion resistance for glazed tile. Check the rating for the exact finish against the foot traffic you expect.</p><a className="education-backlink" href="/education/pei-rating-commercial-porcelain-tile/">Read the full guide →</a></details></article>
+      </div>
+      <h2 className={styles.rule}>More porcelain tile guides</h2>
+      <div className={styles.cards}>
+        <a href="/education/grout-color-white-marble-look-tile/"><img src="/education/grout-color-white-marble-look-tile.png" alt="" loading="lazy" width="312" height="222" /><h3>What color grout goes with white marble-look porcelain tile?</h3></a>
+        <a href="/education/48x48-porcelain-tile-layout/"><img src="/education/48x48-porcelain-tile-layout.webp" alt="" loading="lazy" width="312" height="222" /><h3>48×48 porcelain tile: how to plan a large-format floor</h3></a>
+        <a href="/education/choose-marble-look-porcelain-tile/"><img src="/education/choose-marble-look-porcelain-tile.webp" alt="" loading="lazy" width="312" height="222" /><h3>How to choose marble-look porcelain tile: veining, shade, and repeat</h3></a>
+        <a href="/education/porcelain-tile-pallet-delivery/"><img src="/education/porcelain-tile-pallet-delivery.webp" alt="" loading="lazy" width="312" height="222" /><h3>Porcelain tile delivery: what to check before your pallet arrives</h3></a>
+        <a href="/education/porcelain-tile-florida-condos/"><img src="/education/porcelain-tile-florida-condos.webp" alt="" loading="lazy" width="312" height="222" /><h3>Porcelain tile for Florida condos: what to confirm before you order</h3></a>
       </div>
     </div>
     <section className={styles.cta}><h2>Planning a project?</h2><a href="tel:+17542239107">Check stock</a><a href="/request-quote/">Request a Quote</a></section>

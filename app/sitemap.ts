@@ -5,7 +5,7 @@ import {siteUrl} from '@/lib/site';
 export const dynamic = 'force-static';
 
 export default function sitemap():MetadataRoute.Sitemap {
-  const fixed = ['', '/porcelain-tile', '/case-studies', '/architects-builders', '/education', '/education/24x24-vs-24x48-porcelain-tile', '/education/polished-vs-matte-porcelain-tile', '/education/how-much-porcelain-tile-to-order', '/delivery', '/about', '/contact', '/request-quote'];
+  const fixed = ['', '/porcelain-tile', '/case-studies', '/architects-builders', '/education', '/education/24x24-vs-24x48-porcelain-tile', '/education/polished-vs-matte-porcelain-tile', '/education/how-much-porcelain-tile-to-order', '/education/grout-color-white-marble-look-tile', '/education/what-is-rectified-porcelain-tile', '/education/48x48-porcelain-tile-layout', '/education/pei-rating-commercial-porcelain-tile', '/education/choose-marble-look-porcelain-tile', '/education/porcelain-tile-pallet-delivery', '/education/porcelain-tile-florida-condos', '/delivery', '/about', '/contact', '/request-quote'];
   const publishedCases = cases;
   const keywordCollections = ['24x48','24x24','polished','matte','marble-look'];
 
